@@ -87,6 +87,7 @@ h6 {
   font-family: var(--heading-font);
 }
 
+
 /* PHP Email Form Messages
 ------------------------------*/
 .php-email-form .error-message {
@@ -553,6 +554,19 @@ section,
   font-size: 64px;
   font-weight: 700;
 }
+
+.logo-wrapper {
+  text-align: center; /* 중앙 정렬 */
+  margin-bottom: 30px;
+}
+
+.logo-wrapper img {
+  max-width: 50%;
+  height: auto;
+  max-height: auto;  /* 필요시 적절히 조정 */
+  display: inline-block;
+}
+
 
 .hero p {
   margin: 5px 0 0 0;
