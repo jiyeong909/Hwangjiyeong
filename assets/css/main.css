@@ -20,6 +20,7 @@
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+  --background-color-kim: #ffffff;
   --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #45505b; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #0563bb; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
@@ -29,7 +30,7 @@
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #45505b;  /* The default color of the main navmenu links */
+  --nav-color: #2c3e50;  /* The default color of the main navmenu links */
   --nav-hover-color: #0563bb; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
@@ -40,7 +41,7 @@
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #f9f9f9;
+  --background-color: #ffffff;
   --surface-color: #ffffff;
 }
 
@@ -538,7 +539,7 @@ section,
 
 .hero:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 30%);
+  background: color-mix(in srgb, var(--background-color-kim), transparent 50%);
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -555,16 +556,42 @@ section,
   font-weight: 700;
 }
 
+.hello-text {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.intro-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.animated-drop {
+  animation: fadeDown 1.0s ease-out forwards;
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .logo-wrapper {
-  text-align: center; /* 중앙 정렬 */
   margin-bottom: 30px;
 }
 
 .logo-wrapper img {
-  max-width: 50%;
+  max-height: 200px;
+  width: auto;
   height: auto;
-  max-height: auto;  /* 필요시 적절히 조정 */
-  display: inline-block;
 }
 
 
@@ -673,6 +700,8 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 50%);
   font-size: 16px;
 }
+
+
 
 /*--------------------------------------------------------------
 # Skills Section
