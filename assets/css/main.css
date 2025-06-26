@@ -1229,16 +1229,59 @@ body {
 
 .portfolio-details .portfolio-details-slider img {
   width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .portfolio-details .swiper-wrapper {
-  height: auto;
+  height: 100%;
+}
+
+.portfolio-details-slider {
+  position: relative;
+  max-width: 100%;
+}
+
+@media (min-width: 992px) {
+  .portfolio-details-slider {
+    max-width: 500px;
+  }
+}
+
+
+/* 오른쪽 텍스트 영역 스타일 */
+.portfolio-info {
+  padding-left: 30px;
+}
+
+.portfolio-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.portfolio-info li {
+  margin-bottom: 10px;
+  font-size: 16px;
 }
 
 .portfolio-details .swiper-button-prev,
 .portfolio-details .swiper-button-next {
-  width: 48px;
+   width: 48px;
   height: 48px;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  z-index: 10;
+}
+
+.portfolio-details .swiper-button-prev {
+  left: 10px;
+}
+
+.portfolio-details .swiper-button-next {
+  right: 10px;
 }
 
 .portfolio-details .swiper-button-prev:after,
@@ -1260,12 +1303,41 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 575px) {
+/* 텍스트 영역 스타일 */
+.project-info-box {
+  padding: 10px 30px;
+}
 
-  .portfolio-details .swiper-button-prev,
-  .portfolio-details .swiper-button-next {
-    display: none;
+.project-info-box h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--accent-color, #0563bb);
+  display: inline-block;
+}
+
+.project-info-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-info-box li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.project-info-box li strong {
+  color: #999;
+  margin-right: 5px;
+}
+
+/* 반응형 - 모바일에선 세로정렬 */
+@media (max-width: 991px) {
+  .project-info-box {
+    padding-top: 30px;
   }
+
 
   .image-wrapper img.custom-img {
     width: 90% !important;
