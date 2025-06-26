@@ -1268,6 +1268,12 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .image-wrapper img.custom-img {
+    width: 90% !important; /* 모바일에선 더 크게 보여줌 */
+  }
+}
+
 .portfolio-details .swiper-pagination {
   margin-top: 20px;
   position: relative;
