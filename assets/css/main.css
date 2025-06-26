@@ -23,6 +23,7 @@
   --background-color-kim: #ffffff;
   --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #45505b; /* Color for headings, subheadings and title throughout the website */
+  --accent-color-temp: #ea670a;
   --accent-color: #0563bb; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
@@ -74,7 +75,7 @@ a {
 }
 
 a:hover {
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  color: color-mix(in srgb, var(--accent-color-temp), transparent 25%);
   text-decoration: none;
 }
 
@@ -476,6 +477,8 @@ section,
   position: relative;
 }
 
+
+
 .section-title h2 {
   font-size: 32px;
   font-weight: 700;
@@ -857,7 +860,7 @@ section,
   bottom: -100%;
   z-index: 3;
   transition: all ease-in-out 0.5s;
-  background: color-mix(in srgb, var(--background-color), transparent 10%);
+  background: color-mix(in srgb, var(--surface-color), transparent 10%);
   padding: 15px;
 }
 
@@ -877,7 +880,7 @@ section,
 .portfolio .portfolio-item .portfolio-info .preview-link,
 .portfolio .portfolio-item .portfolio-info .details-link {
   position: absolute;
-  right: 50px;
+  right: 30px;
   font-size: 24px;
   top: calc(50% - 14px);
   color: color-mix(in srgb, var(--default-color), transparent 30%);
@@ -887,7 +890,12 @@ section,
 
 .portfolio .portfolio-item .portfolio-info .preview-link:hover,
 .portfolio .portfolio-item .portfolio-info .details-link:hover {
-  color: var(--accent-color);
+  color: var(--accent-color-temp);
+}
+
+.glightbox-container .gslide-media {
+  max-height: 90vh; /* 브라우저 높이 제한 */
+  overflow-y: auto;  /* 세로 스크롤 허용 */
 }
 
 .portfolio .portfolio-item .portfolio-info .details-link {
@@ -1193,6 +1201,32 @@ section,
 /*--------------------------------------------------------------
 # Portfolio Details Section
 --------------------------------------------------------------*/
+
+.page-title {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* 다른 요소 위에 보이도록 */
+  background-color: #f8f8f8; /* 배경색 유지 */
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 (선택) */
+}
+
+body {
+  padding-top: 100px; /* .page-title 높이만큼 여백 확보 */
+}
+
+.image-wrapper {
+  text-align: center;         /* 이미지 가운데 정렬 */
+}
+
+.image-wrapper img.custom-img {
+  width: 50% !important;      /* 강제로 50%로 설정 */
+  height: auto;
+  display: inline-block;
+}
+
 .portfolio-details .portfolio-details-slider img {
   width: 100%;
 }
@@ -1231,6 +1265,10 @@ section,
   .portfolio-details .swiper-button-prev,
   .portfolio-details .swiper-button-next {
     display: none;
+  }
+
+  .image-wrapper img.custom-img {
+    width: 90% !important;
   }
 }
 
