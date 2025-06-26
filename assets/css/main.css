@@ -1266,9 +1266,10 @@ body {
   .portfolio-details .swiper-button-next {
     display: none;
   }
+
   .image-wrapper img.custom-img {
     width: 90% !important;
-}
+  }
 }
 
 .portfolio-details .swiper-pagination {
