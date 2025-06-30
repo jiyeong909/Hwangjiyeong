@@ -1214,7 +1214,7 @@ section,
 }
 
 body {
-  padding-top: 100px; /* .page-title 높이만큼 여백 확보 */
+  padding-top: 0; /* .page-title 높이만큼 여백 확보 */
 }
 
 .image-wrapper {
@@ -1222,9 +1222,11 @@ body {
 }
 
 .image-wrapper img.custom-img {
-  width: 50% !important;      /* 강제로 50%로 설정 */
+  width: 100%;
+  max-width: 600px;
   height: auto;
-  display: inline-block;
+  display: block;
+  margin: 0 auto;
 }
 
 .portfolio-details .portfolio-details-slider img {
@@ -1235,19 +1237,13 @@ body {
 }
 
 .portfolio-details .swiper-wrapper {
-  height: 100%;
+  width: 75%
 }
 
 .portfolio-details-slider {
-  position: relative;
-  max-width: 100%;
+  height: 100%
 }
 
-@media (min-width: 992px) {
-  .portfolio-details-slider {
-    max-width: 500px;
-  }
-}
 
 
 /* 오른쪽 텍스트 영역 스타일 */
@@ -1338,9 +1334,12 @@ body {
     padding-top: 30px;
   }
 
-
   .image-wrapper img.custom-img {
-    width: 90% !important;
+    width: 100%;
+    max-width: 350px;  /* ✅ 모바일에서는 이미지 최대 너비 제한 */
+    height: auto;
+    display: block;
+    margin: 0 auto;
   }
 }
 
